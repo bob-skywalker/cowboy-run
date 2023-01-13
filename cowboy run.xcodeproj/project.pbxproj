@@ -16,6 +16,9 @@
 		5CBCF70D296FE8490061104A /* cowboy_runTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF70C296FE8490061104A /* cowboy_runTests.swift */; };
 		5CBCF717296FE8490061104A /* cowboy_runUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF716296FE8490061104A /* cowboy_runUITests.swift */; };
 		5CBCF719296FE8490061104A /* cowboy_runUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF718296FE8490061104A /* cowboy_runUITestsLaunchTests.swift */; };
+		5CBCF72C2970EE3D0061104A /* Level_0-1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CBCF72B2970EE3D0061104A /* Level_0-1.sks */; };
+		5CBCF72F2970EEFA0061104A /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CBCF72E2970EEFA0061104A /* TileSets.sks */; };
+		5CBCF7322970F25E0061104A /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF7312970F25E0061104A /* SKNode+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		5CBCF716296FE8490061104A /* cowboy_runUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cowboy_runUITests.swift; sourceTree = "<group>"; };
 		5CBCF718296FE8490061104A /* cowboy_runUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cowboy_runUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5CBCF725296FE8720061104A /* cowboy-run-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "cowboy-run-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5CBCF72B2970EE3D0061104A /* Level_0-1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_0-1.sks"; sourceTree = "<group>"; };
+		5CBCF72E2970EEFA0061104A /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
+		5CBCF7312970F25E0061104A /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 		5CBCF6F1296FE8470061104A /* cowboy run */ = {
 			isa = PBXGroup;
 			children = (
+				5CBCF7302970F2400061104A /* Extensions */,
+				5CBCF72D2970EED10061104A /* Tiles */,
+				5CBCF7292970ED8F0061104A /* Scene Editor Files */,
 				5CBCF6FF296FE8490061104A /* Assets.xcassets */,
 				5CBCF728296FE8EC0061104A /* Scene */,
 				5CBCF727296FE8E40061104A /* Controller */,
@@ -149,6 +158,38 @@
 				5CBCF6F8296FE8470061104A /* GameScene.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		5CBCF7292970ED8F0061104A /* Scene Editor Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CBCF72A2970ED9F0061104A /* Levels */,
+			);
+			path = "Scene Editor Files";
+			sourceTree = "<group>";
+		};
+		5CBCF72A2970ED9F0061104A /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				5CBCF72B2970EE3D0061104A /* Level_0-1.sks */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		5CBCF72D2970EED10061104A /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				5CBCF72E2970EEFA0061104A /* TileSets.sks */,
+			);
+			path = Tiles;
+			sourceTree = "<group>";
+		};
+		5CBCF7302970F2400061104A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5CBCF7312970F25E0061104A /* SKNode+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CBCF6FE296FE8470061104A /* Main.storyboard in Resources */,
+				5CBCF72C2970EE3D0061104A /* Level_0-1.sks in Resources */,
+				5CBCF72F2970EEFA0061104A /* TileSets.sks in Resources */,
 				5CBCF700296FE8490061104A /* Assets.xcassets in Resources */,
 				5CBCF703296FE8490061104A /* LaunchScreen.storyboard in Resources */,
 			);
@@ -283,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CBCF6F9296FE8470061104A /* GameScene.swift in Sources */,
+				5CBCF7322970F25E0061104A /* SKNode+Extensions.swift in Sources */,
 				5CBCF6FB296FE8470061104A /* GameViewController.swift in Sources */,
 				5CBCF6F3296FE8470061104A /* AppDelegate.swift in Sources */,
 			);
