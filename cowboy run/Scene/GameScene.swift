@@ -16,6 +16,7 @@ enum GameState{
 class GameScene: SKScene {
     
     var worldLayer: Layer!
+    var backgroundLayer: RepeatingLayer!
     var mapNode: SKNode!
     var tileMap: SKTileMapNode!
     
@@ -32,6 +33,19 @@ class GameScene: SKScene {
         worldLayer = Layer()
         addChild(worldLayer)
         worldLayer.layerVelocity = CGPoint(x: -200.0, y: 0.0)
+        
+        backgroundLayer = RepeatingLayer()
+        addChild(backgroundLayer)
+        
+        for i in 0...1{
+            let backgroundImage = SKSpriteNode(imageNamed: "DesertBackground")
+            backgroundImage.name = String(i)
+            backgroundImage.scale(to: frame.size, width: false, multiplier: 1.0)
+            backgroundImage.anchorPoint = CGPoint.zero
+            backgroundImage.position = CGPoint(x: 0.0 + CGFloat(i) * backgroundImage.size.width, y: 0.0)
+            backgroundLayer.addChild(backgroundImage)
+        }
+        backgroundLayer.layerVelocity = CGPoint(x: -100.0, y: 0.0)
         
         load(level: "Level_0-1")
     }
@@ -78,6 +92,7 @@ class GameScene: SKScene {
         
         if gameState == .ongoing{
             worldLayer.update(dt)
+            backgroundLayer.update(dt)
         }
     }
 }

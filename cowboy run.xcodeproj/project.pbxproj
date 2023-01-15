@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C8772E129720CCD008E6F2C /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E029720CCD008E6F2C /* Layer.swift */; };
 		5C8772E32974B898008E6F2C /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E22974B898008E6F2C /* RepeatingLayer.swift */; };
+		5C8772E52974BCF8008E6F2C /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E42974BCF8008E6F2C /* GameConstants.swift */; };
 		5CBCF6F3296FE8470061104A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF6F2296FE8470061104A /* AppDelegate.swift */; };
 		5CBCF6F9296FE8470061104A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF6F8296FE8470061104A /* GameScene.swift */; };
 		5CBCF6FB296FE8470061104A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF6FA296FE8470061104A /* GameViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		5C8772E029720CCD008E6F2C /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		5C8772E22974B898008E6F2C /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
+		5C8772E42974BCF8008E6F2C /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		5CBCF6EF296FE8470061104A /* cowboy run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cowboy run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBCF6F2296FE8470061104A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CBCF6F8296FE8470061104A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				5CBCF726296FE8CE0061104A /* UI */,
 				5CBCF725296FE8720061104A /* cowboy-run-Info.plist */,
 				5CBCF6F2296FE8470061104A /* AppDelegate.swift */,
+				5C8772E42974BCF8008E6F2C /* GameConstants.swift */,
 			);
 			path = "cowboy run";
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				5CBCF7322970F25E0061104A /* SKNode+Extensions.swift in Sources */,
 				5C8772E129720CCD008E6F2C /* Layer.swift in Sources */,
 				5CBCF6FB296FE8470061104A /* GameViewController.swift in Sources */,
+				5C8772E52974BCF8008E6F2C /* GameConstants.swift in Sources */,
 				5CBCF6F3296FE8470061104A /* AppDelegate.swift in Sources */,
 				5C8772E32974B898008E6F2C /* RepeatingLayer.swift in Sources */,
 			);
