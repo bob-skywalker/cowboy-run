@@ -8,6 +8,11 @@
 import SpriteKit
 import GameplayKit
 
+
+enum GameState{
+    case ready, ongoing, paused,finished
+}
+
 class GameScene: SKScene {
     
     var worldLayer: Layer!
@@ -16,6 +21,8 @@ class GameScene: SKScene {
     
     var lastTime: TimeInterval = 0
     var dt: TimeInterval = 0
+    
+    var gameState = GameState.ready
     
     override func didMove(to view: SKView) {
         createLayers()
@@ -44,6 +51,23 @@ class GameScene: SKScene {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        switch gameState {
+        case .ready:
+            gameState = .ongoing
+        default:
+            break
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         if lastTime > 0 {
             dt = currentTime - lastTime
@@ -52,7 +76,9 @@ class GameScene: SKScene {
         }
         lastTime = currentTime
         
-        worldLayer.update(dt)
+        if gameState == .ongoing{
+            worldLayer.update(dt)
+        }
     }
 }
 
