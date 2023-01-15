@@ -31,14 +31,16 @@ class GameScene: SKScene {
     
     func createLayers(){
         worldLayer = Layer()
+        worldLayer.zPosition = GameConstants.ZPositions.worldZ
         addChild(worldLayer)
         worldLayer.layerVelocity = CGPoint(x: -200.0, y: 0.0)
         
         backgroundLayer = RepeatingLayer()
+        backgroundLayer.zPosition = GameConstants.ZPositions.farBGZ
         addChild(backgroundLayer)
         
         for i in 0...1{
-            let backgroundImage = SKSpriteNode(imageNamed: "DesertBackground")
+            let backgroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.worldBackgroundNames[0])
             backgroundImage.name = String(i)
             backgroundImage.scale(to: frame.size, width: false, multiplier: 1.0)
             backgroundImage.anchorPoint = CGPoint.zero
@@ -59,7 +61,7 @@ class GameScene: SKScene {
     }
     
     func loadTileMap() {
-        if let groundTiles = mapNode.childNode(withName: "Ground Tiles") as? SKTileMapNode{
+        if let groundTiles = mapNode.childNode(withName: GameConstants.StringConstants.groundTilesName) as? SKTileMapNode{
             tileMap = groundTiles
             tileMap.scale(to: frame.size, width: false, multiplier: 1.0)
         }
