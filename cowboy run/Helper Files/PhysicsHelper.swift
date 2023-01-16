@@ -18,4 +18,8 @@ class PhysicsHelper{
             sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
         }
     }
+    
+    static func addPhysicsBody(to tileMap: SKTileMapNode, and tileInfo: String){
+        
+    }
 }

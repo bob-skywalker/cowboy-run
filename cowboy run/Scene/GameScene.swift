@@ -69,6 +69,7 @@ class GameScene: SKScene {
         if let groundTiles = mapNode.childNode(withName: GameConstants.StringConstants.groundTilesName) as? SKTileMapNode{
             tileMap = groundTiles
             tileMap.scale(to: frame.size, width: false, multiplier: 1.0)
+            PhysicsHelper.addPhysicsBody(to: tileMap, and: "ground")
         }
         addPlayer()
     }
