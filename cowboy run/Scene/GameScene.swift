@@ -43,6 +43,8 @@ class GameScene: SKScene {
     var touch = false
     var brake = false
     
+    var coins = 0 
+    
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -6.0)
