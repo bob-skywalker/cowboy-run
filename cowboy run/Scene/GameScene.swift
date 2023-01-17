@@ -28,8 +28,10 @@ class GameScene: SKScene {
             switch newValue {
             case .ongoing:
                 player.state = .running
+                pauseEnemies(bool: false)
             case .finished:
                 player.state = .idle
+                pauseEnemies(bool: true)
             default:
                 break 
             }
@@ -44,6 +46,10 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -6.0)
+        
+        physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: frame.minX, y: frame.minY), to: CGPoint(x: frame.maxX, y: frame.minY))
+        physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.frameCategory
+        physicsBody!.contactTestBitMask = GameConstants.PhysicsCategories.playerCategory
         
         createLayers()
     }
@@ -74,6 +80,7 @@ class GameScene: SKScene {
     func load(level: String){
         if let levelNode = SKNode.unarchiveFromFile(file: level){
             mapNode = levelNode
+            levelNode.isPaused = false
             worldLayer.addChild(mapNode)
             loadTileMap()
         }
@@ -84,6 +91,11 @@ class GameScene: SKScene {
             tileMap = groundTiles
             tileMap.scale(to: frame.size, width: false, multiplier: 1.0)
             PhysicsHelper.addPhysicsBody(to: tileMap, and: "ground")
+            for child in groundTiles.children {
+                if let sprite = child as? SKSpriteNode, sprite.name != nil{
+                    ObjectHelper.handleChild(sprite: sprite, with: sprite.name!)
+                }
+            }
         }
         addPlayer()
     }
@@ -131,6 +143,39 @@ class GameScene: SKScene {
         player.physicsBody!.velocity.dy = 0.0
         
         player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescendActionKey) as! SKAction)
+    }
+    
+    func handleEnemyContact(){
+        die(reason: 0)
+    }
+    
+    func pauseEnemies(bool: Bool){
+        for enemy in tileMap[GameConstants.StringConstants.enemyName]{
+            enemy.isPaused = bool
+        }
+    }
+    
+    func die(reason: Int){
+        gameState = .finished
+        player.turnGravity(on: false)
+        
+        let deathAnimation: SKAction!
+        
+        switch reason {
+        case 0:
+            deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
+        case 1:
+            let up = SKAction.moveTo(y: frame.midY, duration: 0.4)
+            let wait = SKAction.wait(forDuration: 0.3)
+            let down = SKAction.moveTo(y: -player.size.height, duration: 0.4)
+            deathAnimation = SKAction.sequence([up,wait,down])
+        default:
+            deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
+        }
+        
+        player.run(deathAnimation){
+            self.player.removeFromParent()
+        }
     }
     
     
@@ -193,7 +238,14 @@ extension GameScene: SKPhysicsContactDelegate{
         switch contactMask{
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.groundCategory:
             player.airborne = false
-            brake = false 
+            brake = false
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.finishCategory:
+            gameState = .finished
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.enemyCategory:
+            handleEnemyContact()
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.frameCategory:
+            physicsBody = nil
+            die(reason: 1)
         default:
             break
         }

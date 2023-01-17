@@ -12,6 +12,7 @@
 		5C8772E52974BCF8008E6F2C /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E42974BCF8008E6F2C /* GameConstants.swift */; };
 		5C8772E82974C161008E6F2C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E72974C160008E6F2C /* Player.swift */; };
 		5C8772EB2974CB42008E6F2C /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772EA2974CB42008E6F2C /* PhysicsHelper.swift */; };
+		5CA186732976426E00C4B3FA /* ObjectHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA186722976426E00C4B3FA /* ObjectHelper.swift */; };
 		5CAC6F9F2974E85A00A116A0 /* GroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC6F9E2974E85A00A116A0 /* GroundNode.swift */; };
 		5CAC6FA12975DF5500A116A0 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC6FA02975DF5500A116A0 /* AnimationHelper.swift */; };
 		5CBCF6F3296FE8470061104A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF6F2296FE8470061104A /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		5C8772E42974BCF8008E6F2C /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		5C8772E72974C160008E6F2C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5C8772EA2974CB42008E6F2C /* PhysicsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
+		5CA186722976426E00C4B3FA /* ObjectHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHelper.swift; sourceTree = "<group>"; };
 		5CAC6F9E2974E85A00A116A0 /* GroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundNode.swift; sourceTree = "<group>"; };
 		5CAC6FA02975DF5500A116A0 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		5CBCF6EF296FE8470061104A /* cowboy run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cowboy run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 			children = (
 				5C8772EA2974CB42008E6F2C /* PhysicsHelper.swift */,
 				5CAC6FA02975DF5500A116A0 /* AnimationHelper.swift */,
+				5CA186722976426E00C4B3FA /* ObjectHelper.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				5CBCF7322970F25E0061104A /* SKNode+Extensions.swift in Sources */,
 				5C8772E129720CCD008E6F2C /* Layer.swift in Sources */,
 				5CBCF6FB296FE8470061104A /* GameViewController.swift in Sources */,
+				5CA186732976426E00C4B3FA /* ObjectHelper.swift in Sources */,
 				5C8772E82974C161008E6F2C /* Player.swift in Sources */,
 				5C8772E52974BCF8008E6F2C /* GameConstants.swift in Sources */,
 				5CAC6FA12975DF5500A116A0 /* AnimationHelper.swift in Sources */,
