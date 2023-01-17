@@ -43,7 +43,7 @@ class GameScene: SKScene {
     var touch = false
     var brake = false
     
-    var coins = 0 
+    var coins = 0
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -144,7 +144,15 @@ class GameScene: SKScene {
         brake = true
         player.physicsBody!.velocity.dy = 0.0
         
-        player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescendActionKey) as! SKAction)
+        if let magic = ParticleHelper.addParticleEffect(name: GameConstants.StringConstants.brakeMagicEmitterKey, particlePositionRange: CGVector(dx: 30.0, dy: 30.0), position: CGPoint(x: player.position.x, y: player.position.y - player.size.height / 2)) {
+            magic.zPosition = GameConstants.ZPositions.objectZ
+            addChild(magic)
+        }
+        
+        player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescendActionKey) as! SKAction) {
+            ParticleHelper.removeParticleEffect(name: GameConstants.StringConstants.brakeMagicEmitterKey, from: self)
+            
+        }
     }
     
     func handleEnemyContact(){
@@ -155,6 +163,29 @@ class GameScene: SKScene {
         for enemy in tileMap[GameConstants.StringConstants.enemyName]{
             enemy.isPaused = bool
         }
+    }
+    
+    func handleCollectibles(sprite: SKSpriteNode){
+        switch sprite.name! {
+        case GameConstants.StringConstants.coinName:
+            collectCoin(sprite: sprite)
+        default:
+            break
+        }
+    }
+    
+    func collectCoin(sprite: SKSpriteNode){
+        coins += 1
+        
+        if let coinDust = ParticleHelper.addParticleEffect(name: GameConstants.StringConstants.coinDustEmitterKey, particlePositionRange: CGVector(dx: 5.0, dy: 5.0), position: CGPoint.zero) {
+            coinDust.zPosition = GameConstants.ZPositions.objectZ
+            sprite.addChild(coinDust)
+            sprite.run(SKAction.fadeOut(withDuration: 0.4)) {
+                coinDust.removeFromParent() //remove the particle effects
+                sprite.removeFromParent() //remove the sprite node completely from parents
+            }
+        }
+        
     }
     
     func die(reason: Int){
@@ -248,6 +279,12 @@ extension GameScene: SKPhysicsContactDelegate{
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.frameCategory:
             physicsBody = nil
             die(reason: 1)
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.collectibleCategory:
+            let collectible = contact.bodyA.node?.name == player.name ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
+            
+            handleCollectibles(sprite: collectible)
+            
+            
         default:
             break
         }
