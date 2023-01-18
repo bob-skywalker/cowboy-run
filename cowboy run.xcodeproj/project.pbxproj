@@ -33,6 +33,9 @@
 		5CBCF72F2970EEFA0061104A /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CBCF72E2970EEFA0061104A /* TileSets.sks */; };
 		5CBCF7322970F25E0061104A /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF7312970F25E0061104A /* SKNode+Extensions.swift */; };
 		5CFC88AE2977839D00791959 /* up-down-rotate.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC88AD2977839D00791959 /* up-down-rotate.sks */; };
+		5CFC88B1297789E800791959 /* HUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC88B0297789E800791959 /* HUDDelegate.swift */; };
+		5CFC88B329778A3700791959 /* GameHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC88B229778A3700791959 /* GameHUD.swift */; };
+		5CFC88B729778B4400791959 /* PEPSI_pl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC88B629778B3300791959 /* PEPSI_pl.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		5CBCF72E2970EEFA0061104A /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 		5CBCF7312970F25E0061104A /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		5CFC88AD2977839D00791959 /* up-down-rotate.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "up-down-rotate.sks"; sourceTree = "<group>"; };
+		5CFC88B0297789E800791959 /* HUDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDelegate.swift; sourceTree = "<group>"; };
+		5CFC88B229778A3700791959 /* GameHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
+		5CFC88B629778B3300791959 /* PEPSI_pl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PEPSI_pl.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 			children = (
 				5C8772E72974C160008E6F2C /* Player.swift */,
 				5CAC6F9E2974E85A00A116A0 /* GroundNode.swift */,
+				5CFC88B229778A3700791959 /* GameHUD.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -172,6 +179,8 @@
 		5CBCF6F1296FE8470061104A /* cowboy run */ = {
 			isa = PBXGroup;
 			children = (
+				5CFC88B429778A7200791959 /* Resources */,
+				5CFC88AF297789D400791959 /* Protocols */,
 				5C5BD7DE297747F20037CCBA /* Particle Emitters */,
 				5C8772E92974CB2C008E6F2C /* Helper Files */,
 				5C8772E62974C12F008E6F2C /* Custom Classes */,
@@ -264,6 +273,30 @@
 				5CBCF7312970F25E0061104A /* SKNode+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5CFC88AF297789D400791959 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5CFC88B0297789E800791959 /* HUDDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5CFC88B429778A7200791959 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CFC88B529778A7A00791959 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5CFC88B529778A7A00791959 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5CFC88B629778B3300791959 /* PEPSI_pl.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CFC88B729778B4400791959 /* PEPSI_pl.ttf in Resources */,
 				5CBCF6FE296FE8470061104A /* Main.storyboard in Resources */,
 				5CFC88AE2977839D00791959 /* up-down-rotate.sks in Resources */,
 				5CBCF72C2970EE3D0061104A /* Level_0-1.sks in Resources */,
@@ -406,7 +440,9 @@
 			files = (
 				5CBCF6F9296FE8470061104A /* GameScene.swift in Sources */,
 				5CBCF7322970F25E0061104A /* SKNode+Extensions.swift in Sources */,
+				5CFC88B1297789E800791959 /* HUDDelegate.swift in Sources */,
 				5C8772E129720CCD008E6F2C /* Layer.swift in Sources */,
+				5CFC88B329778A3700791959 /* GameHUD.swift in Sources */,
 				5CBCF6FB296FE8470061104A /* GameViewController.swift in Sources */,
 				5CA186732976426E00C4B3FA /* ObjectHelper.swift in Sources */,
 				5C8772E82974C161008E6F2C /* Player.swift in Sources */,

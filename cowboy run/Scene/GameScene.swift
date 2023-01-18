@@ -46,6 +46,8 @@ class GameScene: SKScene {
     var coins = 0
     var superCoins = 0
     
+    var hudDelegate: HUDDelegate?
+    
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -6.0)
@@ -101,6 +103,7 @@ class GameScene: SKScene {
             }
         }
         addPlayer()
+        addHUD()
     }
     
     func addPlayer(){
@@ -178,7 +181,7 @@ class GameScene: SKScene {
     func collectCoin(sprite: SKSpriteNode){
         if GameConstants.StringConstants.superCoinName.contains(sprite.name!) {
             superCoins += 1
-
+  
         } else {
             coins += 1
         }
@@ -194,6 +197,15 @@ class GameScene: SKScene {
         }
         
     }
+    
+    func addHUD() {
+        let hud = GameHUD(with: CGSize(width: frame.width, height: frame.height*0.1))
+        hud.position = CGPoint(x: frame.midX, y: frame.maxY - frame.height*0.05)
+        hud.zPosition = GameConstants.ZPositions.hudZ
+        hudDelegate = hud
+        addChild(hud)
+    }
+    
     
     func die(reason: Int){
         gameState = .finished
