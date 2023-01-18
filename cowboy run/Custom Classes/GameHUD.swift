@@ -22,11 +22,11 @@ class GameHUD: SKSpriteNode, HUDDelegate {
         coinLabel.text = "0"
         coinLabel.fontSize = 160.0
         coinLabel.scale(to: frame.size, width: false , multiplier: 0.8)
-        coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width * 1, y: frame.midY - 7)
+        coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width * 1, y: frame.midY)
         coinLabel.zPosition = GameConstants.ZPositions.hudZ
         addChild(coinLabel)
         
-        superCoinCounter.position = CGPoint(x: frame.minX + superCoinCounter.frame.size.width / 2, y: frame.midY - 7)
+        superCoinCounter.position = CGPoint(x: frame.minX + superCoinCounter.frame.size.width / 2, y: frame.midY)
         superCoinCounter.zPosition = GameConstants.ZPositions.hudZ
         addChild(superCoinCounter)
         
