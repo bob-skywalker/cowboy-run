@@ -46,6 +46,23 @@ struct GameConstants{
         static let superCoinName = ["Super1", "Super2", "Super3"]
         static let gameFontName = "PEPSI_pl"
         
+        static let cancelButton = "CancelButton"
+        static let emptyButton = "EmptyButton"
+        static let menuButton = "MenuButton"
+        static let playButton = "PlayButton"
+        static let retryButton = "RetryButton"
+        static let popupButtonNames = ["MenuButton", "PlayButton","RetryButton", "CancelButton"]
+        
+        static let banner = "Banner"
+        static let popupLarge = "PopupLarge"
+        static let popupSmall = "PopupSmall"
+        static let starEmpty = "StarEmpty"
+        static let starFull = "StarFull"
+
+
+
+        
+        
         
         static let playerIdleAtlas = "Player Idle Atlas"
         static let playerRunAtlas = "Player Run Atlas"

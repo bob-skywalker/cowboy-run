@@ -20,13 +20,13 @@ class GameHUD: SKSpriteNode, HUDDelegate {
         
         coinLabel.verticalAlignmentMode = .center
         coinLabel.text = "0"
-        coinLabel.fontSize = 160.0
-        coinLabel.scale(to: frame.size, width: false , multiplier: 0.8)
-        coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width * 1, y: frame.midY)
+        coinLabel.fontSize = 120.0
+        coinLabel.scale(to: frame.size, width: false , multiplier: 0.6)
+        coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width * 1, y: frame.midY - 7)
         coinLabel.zPosition = GameConstants.ZPositions.hudZ
         addChild(coinLabel)
         
-        superCoinCounter.position = CGPoint(x: frame.minX + superCoinCounter.frame.size.width / 2, y: frame.midY)
+        superCoinCounter.position = CGPoint(x: frame.minX + superCoinCounter.frame.size.width / 2, y: frame.midY - 7)
         superCoinCounter.zPosition = GameConstants.ZPositions.hudZ
         addChild(superCoinCounter)
         
