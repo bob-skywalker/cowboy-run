@@ -20,7 +20,7 @@ class GameHUD: SKSpriteNode, HUDDelegate {
         
         coinLabel.verticalAlignmentMode = .center
         coinLabel.text = "0"
-        coinLabel.fontSize = 200.0
+        coinLabel.fontSize = 160.0
         coinLabel.scale(to: frame.size, width: false , multiplier: 0.8)
         coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width * 1, y: frame.midY - 7)
         coinLabel.zPosition = GameConstants.ZPositions.hudZ
@@ -46,10 +46,11 @@ class GameHUD: SKSpriteNode, HUDDelegate {
     }
     
     func updateCoinLabel(coins: Int) {
-        
+        coinLabel.text = "\(coins)"
     }
     
     func addSuperCoin(index: Int) {
-        
+        let emptySlot = superCoinCounter[String(index)].first as! SKSpriteNode
+        emptySlot.alpha = 1.0 
     }
 }

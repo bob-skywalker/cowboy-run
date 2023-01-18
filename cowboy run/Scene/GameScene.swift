@@ -181,9 +181,15 @@ class GameScene: SKScene {
     func collectCoin(sprite: SKSpriteNode){
         if GameConstants.StringConstants.superCoinName.contains(sprite.name!) {
             superCoins += 1
+            for index in 0..<3 {
+                if GameConstants.StringConstants.superCoinName[index] == sprite.name! {
+                    hudDelegate?.addSuperCoin(index: index)
+                }
+            }
   
         } else {
             coins += 1
+            hudDelegate?.updateCoinLabel(coins: coins)
         }
 
         
