@@ -256,7 +256,7 @@ class GameScene: SKScene {
             popup!.add(buttons: [0,3,2])
         default:
             popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: levelKey, texture: SKTexture(imageNamed: GameConstants.StringConstants.popupLarge), score: coins, coins: superCoins, animated: true)
-            popup!.add(buttons: [2,0])
+            popup!.add(buttons: [2,1,0])
         }
         popup!.position = CGPoint(x: frame.midX, y: frame.midY)
         popup!.zPosition = GameConstants.ZPositions.hudZ
@@ -407,13 +407,13 @@ extension GameScene: PopupButtonHandlerDelegate {
         switch index {
         case 0:
             //Menu
-            break
+            sceneManagerDelegate?.presentMenuScene()
         case 1:
             //Play
-            break
+            sceneManagerDelegate?.presentLevelScene(for: world)
         case 2:
             //Retry
-            break
+            sceneManagerDelegate?.presentGameScene(for: level, in: world)
         case 3:
             //Cancel
             popup!.run(SKAction.fadeOut(withDuration: 0.2)) {

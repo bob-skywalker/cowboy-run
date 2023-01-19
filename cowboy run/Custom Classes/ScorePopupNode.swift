@@ -60,7 +60,7 @@ class ScorePopupNode: PopupNode {
             star.size = empty.size
             star.position = empty.position
             star.zRotation = empty.zRotation
-            star.zPosition = GameConstants.ZPositions.hudZ
+            star.zPosition = GameConstants.ZPositions.hudZ + 1
             star.name = GameConstants.StringConstants.starFull + "_\(i)"
             star.alpha = 0.0
             
@@ -91,7 +91,7 @@ class ScorePopupNode: PopupNode {
     
     func animateResult(with achievedScore: CGFloat, and maxScore: CGFloat) {
         var counter = 0
-        let wait = SKAction.wait(forDuration: 0.10)
+        let wait = SKAction.wait(forDuration: 0.02)
         let count = SKAction.run {
             counter += 1
             self.scoreLabel.text = String(counter)
