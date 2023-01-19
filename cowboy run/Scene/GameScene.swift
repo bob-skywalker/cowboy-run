@@ -29,6 +29,9 @@ class GameScene: SKScene {
             case .ongoing:
                 player.state = .running
                 pauseEnemies(bool: false)
+            case .paused:
+                player.state = .idle
+                pauseEnemies(bool: true)
             case .finished:
                 player.state = .idle
                 pauseEnemies(bool: true)
@@ -263,7 +266,28 @@ class GameScene: SKScene {
         
         player.run(deathAnimation){
             self.player.removeFromParent()
+            self.createAndShowPopup(type: 1, title: GameConstants.StringConstants.failedKey)
         }
+    }
+    
+    func finishGame(){
+        gameState = .finished
+        var stars = 0
+        let percentage = CGFloat(coins) / 100.0
+        if percentage >= 0.8 {
+            stars = 3
+        } else if percentage >= 0.4 {
+            stars = 2
+        } else if coins >= 1 {
+            stars = 1
+        }
+        let scores = [
+            GameConstants.StringConstants.scoreScoreKey: coins,
+            GameConstants.StringConstants.scoreStarsKey: stars,
+            GameConstants.StringConstants.scoreCoinsKey: superCoins
+        ]
+        ScoreManager.compare(scores: [scores], in: "Level_0-1")
+        createAndShowPopup(type: 1, title: GameConstants.StringConstants.completedKey)
     }
     
     
@@ -328,7 +352,7 @@ extension GameScene: SKPhysicsContactDelegate{
             player.airborne = false
             brake = false
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.finishCategory:
-            gameState = .finished
+            finishGame()
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.enemyCategory:
             handleEnemyContact()
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.frameCategory:

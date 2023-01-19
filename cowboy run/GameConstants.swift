@@ -52,7 +52,8 @@ struct GameConstants{
         static let playButton = "PlayButton"
         static let retryButton = "RetryButton"
         static let pauseButton = "PauseButton"
-        static let popupButtonNames = ["MenuButton", "PlayButton","RetryButton", "CancelButton"]
+        static let popupButtonNames = ["MenuButton", "PlayButton", "RetryButton" , "CancelButton"]
+        //["MenuButton", "PlayButton", "RetryButton" , "CancelButton"]
         
         
         static let scoreScoreKey = "score"

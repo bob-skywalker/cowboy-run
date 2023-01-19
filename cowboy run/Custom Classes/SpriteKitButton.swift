@@ -14,7 +14,7 @@ class SpriteKitButton: SKSpriteNode {
     var index: Int
     
     init(defaultButtonImage: String, action: @escaping (Int) -> (), index: Int) {
-        self.defaultButton = SKSpriteNode(imageNamed: defaultButtonImage)
+        defaultButton = SKSpriteNode(imageNamed: defaultButtonImage)
         self.action = action
         self.index = index
         
