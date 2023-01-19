@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C5B1C262979E725008059A0 /* PowerupEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5C5B1C252979E725008059A0 /* PowerupEmitter.sks */; };
+		5C5B1C282979F597008059A0 /* Level_1-1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5C5B1C272979F597008059A0 /* Level_1-1.sks */; };
 		5C5BD7DD2977467F0037CCBA /* ParticleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7DC2977467F0037CCBA /* ParticleHelper.swift */; };
 		5C5BD7E1297748670037CCBA /* CoinDustEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5C5BD7DF297748670037CCBA /* CoinDustEmitter.sks */; };
 		5C5BD7E2297748670037CCBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5BD7E0297748670037CCBA /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		5C5B1C252979E725008059A0 /* PowerupEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PowerupEmitter.sks; sourceTree = "<group>"; };
+		5C5B1C272979F597008059A0 /* Level_1-1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_1-1.sks"; sourceTree = "<group>"; };
 		5C5BD7DC2977467F0037CCBA /* ParticleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleHelper.swift; sourceTree = "<group>"; };
 		5C5BD7DF297748670037CCBA /* CoinDustEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoinDustEmitter.sks; sourceTree = "<group>"; };
 		5C5BD7E0297748670037CCBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				5CBCF72B2970EE3D0061104A /* Level_0-1.sks */,
+				5C5B1C272979F597008059A0 /* Level_1-1.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5BD7F8297903630037CCBA /* PEPSI_pl.ttf in Resources */,
+				5C5B1C282979F597008059A0 /* Level_1-1.sks in Resources */,
 				5C5B1C262979E725008059A0 /* PowerupEmitter.sks in Resources */,
 				5CBCF6FE296FE8470061104A /* Main.storyboard in Resources */,
 				5CFC88AE2977839D00791959 /* up-down-rotate.sks in Resources */,

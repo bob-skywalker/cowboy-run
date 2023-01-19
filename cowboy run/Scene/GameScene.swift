@@ -17,6 +17,7 @@ class GameScene: SKScene {
     
     var worldLayer: Layer!
     var backgroundLayer: RepeatingLayer!
+    var foregroundLayer: RepeatingLayer!
     var mapNode: SKNode!
     var tileMap: SKTileMapNode!
     
@@ -94,7 +95,7 @@ class GameScene: SKScene {
         addChild(backgroundLayer)
         
         for i in 0...1{
-            let backgroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.worldBackgroundNames[0])
+            let backgroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.worldBackgroundNames[world])
             backgroundImage.name = String(i)
             backgroundImage.scale(to: frame.size, width: false, multiplier: 1.0)
             backgroundImage.anchorPoint = CGPoint.zero
@@ -104,6 +105,24 @@ class GameScene: SKScene {
         backgroundLayer.layerVelocity = CGPoint(x: -100.0, y: 0.0)
         
         load(level: levelKey)
+        
+        if world == 1 {
+            
+            foregroundLayer = RepeatingLayer()
+            foregroundLayer.zPosition = GameConstants.ZPositions.hudZ
+            addChild(foregroundLayer)
+            
+            for i in 0...1{
+                let foregroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.foregroundLayer)
+                foregroundImage.name = String(i)
+                foregroundImage.scale(to: frame.size, width: false, multiplier: 1 / 15)
+                foregroundImage.anchorPoint = CGPoint.zero
+                foregroundImage.position = CGPoint(x: 0.0 + CGFloat(i) * foregroundImage.size.width, y: -0.6 * foregroundImage.size.height)
+                foregroundLayer.addChild(foregroundImage)
+                
+            }
+            foregroundLayer.layerVelocity = CGPoint(x: -300, y: 0.0)
+        }
     }
     
     func load(level: String){
@@ -314,11 +333,11 @@ class GameScene: SKScene {
         ScoreManager.compare(scores: [scores], in: "Level_0-1")
         createAndShowPopup(type: 1, title: GameConstants.StringConstants.completedKey)
         
-        if level < 9 {
-            let nextLevelKey = "Level_\(world)-\(level+1)"
-            UserDefaults.standard.set(true, forKey: nextLevelKey)
-            UserDefaults.standard.synchronize()
-        }
+//        if level < 9 {
+//            let nextLevelKey = "Level_\(world)-\(level+1)"
+//            UserDefaults.standard.set(true, forKey: nextLevelKey)
+//            UserDefaults.standard.synchronize()
+//        }
     }
     
     
@@ -360,6 +379,9 @@ class GameScene: SKScene {
         if gameState == .ongoing{
             worldLayer.update(dt)
             backgroundLayer.update(dt)
+            if world == 1 {
+                foregroundLayer.update(dt)
+            }
         }
     }
     

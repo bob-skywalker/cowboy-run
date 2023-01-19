@@ -46,6 +46,8 @@ struct GameConstants{
         static let superCoinImageName = "SuperCoin"
         static let superCoinName = ["Super1", "Super2", "Super3"]
         static let gameFontName = "!PEPSI!"
+        static let menuBackground = "MenuBackground"
+        static let foregroundLayer = "ForegroundLayer"
         
         static let cancelButton = "CancelButton"
         static let emptyButton = "EmptyButton"
