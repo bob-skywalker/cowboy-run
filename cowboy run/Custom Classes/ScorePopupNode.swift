@@ -81,9 +81,9 @@ class ScorePopupNode: PopupNode {
         
         let coinLabel = SKLabelNode(fontNamed: GameConstants.StringConstants.gameFontName)
         coinLabel.verticalAlignmentMode = .center
-        coinLabel.fontSize = 200.0
-        coinLabel.text = "\(numberOfCoins)/3"
-        coinLabel.scale(to: coin.size, width: false, multiplier: 1.0)
+        coinLabel.fontSize = 100.0
+        coinLabel.text = "\(numberOfCoins)"
+        coinLabel.scale(to: coin.size, width: false, multiplier: 0.6)
         coinLabel.position = CGPoint(x: coin.size.width / 1.5, y: frame.maxY - size.height * 0.75)
         coinLabel.zPosition = GameConstants.ZPositions.hudZ
         addChild(coinLabel)

@@ -19,6 +19,8 @@
 		5C5BD7F42978AD340037CCBA /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7F32978AD340037CCBA /* ScoreManager.swift */; };
 		5C5BD7F62978FF130037CCBA /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7F52978FF130037CCBA /* MenuScene.swift */; };
 		5C5BD7F8297903630037CCBA /* PEPSI_pl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C5BD7F7297903630037CCBA /* PEPSI_pl.ttf */; };
+		5C5BD7FA297907230037CCBA /* SceneManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7F9297907230037CCBA /* SceneManagerDelegate.swift */; };
+		5C5BD7FC29790B6C0037CCBA /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7FB29790B6C0037CCBA /* LevelScene.swift */; };
 		5C8772E129720CCD008E6F2C /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E029720CCD008E6F2C /* Layer.swift */; };
 		5C8772E32974B898008E6F2C /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E22974B898008E6F2C /* RepeatingLayer.swift */; };
 		5C8772E52974BCF8008E6F2C /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E42974BCF8008E6F2C /* GameConstants.swift */; };
@@ -75,6 +77,8 @@
 		5C5BD7F32978AD340037CCBA /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		5C5BD7F52978FF130037CCBA /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		5C5BD7F7297903630037CCBA /* PEPSI_pl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PEPSI_pl.ttf; sourceTree = "<group>"; };
+		5C5BD7F9297907230037CCBA /* SceneManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagerDelegate.swift; sourceTree = "<group>"; };
+		5C5BD7FB29790B6C0037CCBA /* LevelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		5C8772E029720CCD008E6F2C /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		5C8772E22974B898008E6F2C /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
 		5C8772E42974BCF8008E6F2C /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 			children = (
 				5CBCF6F8296FE8470061104A /* GameScene.swift */,
 				5C5BD7F52978FF130037CCBA /* MenuScene.swift */,
+				5C5BD7FB29790B6C0037CCBA /* LevelScene.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			children = (
 				5CFC88B0297789E800791959 /* HUDDelegate.swift */,
 				5C5BD7EF2978A04D0037CCBA /* PopupButtonHandlerDelegate.swift */,
+				5C5BD7F9297907230037CCBA /* SceneManagerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -462,11 +468,13 @@
 				5CBCF6F9296FE8470061104A /* GameScene.swift in Sources */,
 				5CBCF7322970F25E0061104A /* SKNode+Extensions.swift in Sources */,
 				5CFC88B1297789E800791959 /* HUDDelegate.swift in Sources */,
+				5C5BD7FA297907230037CCBA /* SceneManagerDelegate.swift in Sources */,
 				5C8772E129720CCD008E6F2C /* Layer.swift in Sources */,
 				5C5BD7EA29789FB90037CCBA /* PopupNode.swift in Sources */,
 				5CFC88B329778A3700791959 /* GameHUD.swift in Sources */,
 				5C5BD7F42978AD340037CCBA /* ScoreManager.swift in Sources */,
 				5CBCF6FB296FE8470061104A /* GameViewController.swift in Sources */,
+				5C5BD7FC29790B6C0037CCBA /* LevelScene.swift in Sources */,
 				5CA186732976426E00C4B3FA /* ObjectHelper.swift in Sources */,
 				5C5BD7F02978A04D0037CCBA /* PopupButtonHandlerDelegate.swift in Sources */,
 				5C8772E82974C161008E6F2C /* Player.swift in Sources */,

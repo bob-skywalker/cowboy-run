@@ -49,9 +49,28 @@ class GameScene: SKScene {
     var coins = 0
     var superCoins = 0
     
+    var world: Int
+    var level: Int
+    var levelKey: String
+    
+
+    
     var popup: PopupNode?
     
     var hudDelegate: HUDDelegate?
+    var sceneManagerDelegate: SceneManagerDelegate?
+    
+    init(size: CGSize, world: Int, level: Int, sceneManagerDelegate: SceneManagerDelegate){
+        self.world = world
+        self.level = level
+        self.levelKey = "Level_\(world)-\(level)"
+        self.sceneManagerDelegate = sceneManagerDelegate
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -84,7 +103,7 @@ class GameScene: SKScene {
         }
         backgroundLayer.layerVelocity = CGPoint(x: -100.0, y: 0.0)
         
-        load(level: "Level_0-1")
+        load(level: levelKey)
     }
     
     func load(level: String){
@@ -224,8 +243,8 @@ class GameScene: SKScene {
         addChild(hud)
         
         let pauseButton = SpriteKitButton(defaultButtonImage: GameConstants.StringConstants.pauseButton, action: buttonHandler, index: 0)
-        pauseButton.scale(to: frame.size, width: false , multiplier: 0.1)
-        pauseButton.position = CGPoint(x: frame.midX, y: frame.maxY -  (1.4 * pauseButton.size.height))
+        pauseButton.scale(to: frame.size, width: false , multiplier: 0.06)
+        pauseButton.position = CGPoint(x: frame.midX, y: frame.maxY -  (1.3 * pauseButton.size.height))
         pauseButton.zPosition = GameConstants.ZPositions.hudZ
         addChild(pauseButton)
     }
@@ -236,7 +255,7 @@ class GameScene: SKScene {
             popup = PopupNode(withTitle: title, and: SKTexture(imageNamed: GameConstants.StringConstants.popupSmall), buttonHandlerDelegate: self)
             popup!.add(buttons: [0,3,2])
         default:
-            popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: "Level_0-1", texture: SKTexture(imageNamed: GameConstants.StringConstants.popupLarge), score: coins, coins: superCoins, animated: true)
+            popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: levelKey, texture: SKTexture(imageNamed: GameConstants.StringConstants.popupLarge), score: coins, coins: superCoins, animated: true)
             popup!.add(buttons: [2,0])
         }
         popup!.position = CGPoint(x: frame.midX, y: frame.midY)
@@ -406,3 +425,5 @@ extension GameScene: PopupButtonHandlerDelegate {
         }
     }
 }
+
+

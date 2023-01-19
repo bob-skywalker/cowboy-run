@@ -22,7 +22,7 @@ class GameHUD: SKSpriteNode, HUDDelegate {
         coinLabel.text = "0"
         coinLabel.fontSize = 120.0
         coinLabel.scale(to: frame.size, width: false , multiplier: 0.6)
-        coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width * 1.3, y: frame.midY - 16)
+        coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width, y: frame.midY - 16)
         coinLabel.zPosition = GameConstants.ZPositions.hudZ
         addChild(coinLabel)
         
@@ -35,7 +35,7 @@ class GameHUD: SKSpriteNode, HUDDelegate {
             emptySlot.name = String(i)
             emptySlot.alpha = 0.5
             emptySlot.scale(to: superCoinCounter.size, width: true, multiplier: 0.3)
-            emptySlot.position = CGPoint(x: -superCoinCounter.size.width / 2 + emptySlot.size.width / 2 +  CGFloat(i) * superCoinCounter.size.width / 2 + superCoinCounter.size.width * 0.05, y: superCoinCounter.frame.midY - 4.5)
+            emptySlot.position = CGPoint(x: -superCoinCounter.size.width / 2 + emptySlot.size.width / 2 +  0.6 * CGFloat(i) * superCoinCounter.size.width / 2 + superCoinCounter.size.width * 0.05, y: superCoinCounter.frame.midY - 4.5)
             emptySlot.zPosition = GameConstants.ZPositions.hudZ
             superCoinCounter.addChild(emptySlot)
         }

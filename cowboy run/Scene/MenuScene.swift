@@ -9,10 +9,10 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
+    var sceneManagerDelegate: SceneManagerDelegate?
+    
     override func didMove(to view: SKView) {
         layoutView()
-        
-        
     }
     
     func layoutView(){
@@ -33,7 +33,7 @@ class MenuScene: SKScene {
     }
     
     func goToLevelScene(_: Int){
-        
+        sceneManagerDelegate?.presentLevelScene(for: 0)
     }
 
 }
