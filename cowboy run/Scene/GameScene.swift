@@ -46,6 +46,8 @@ class GameScene: SKScene {
     var coins = 0
     var superCoins = 0
     
+    var popup: PopupNode?
+    
     var hudDelegate: HUDDelegate?
     
     override func didMove(to view: SKView) {
@@ -204,12 +206,40 @@ class GameScene: SKScene {
         
     }
     
+    func buttonHandler(index: Int){
+        if gameState == .ongoing{
+            gameState = .paused
+            createAndShowPopup(type: 0, title: GameConstants.StringConstants.pausedKey)
+        }
+    }
+    
     func addHUD() {
         let hud = GameHUD(with: CGSize(width: frame.width, height: frame.height*0.1))
         hud.position = CGPoint(x: frame.midX, y: frame.maxY - frame.height*0.05)
         hud.zPosition = GameConstants.ZPositions.hudZ
         hudDelegate = hud
         addChild(hud)
+        
+        let pauseButton = SpriteKitButton(defaultButtonImage: GameConstants.StringConstants.pauseButton, action: buttonHandler, index: 0)
+        pauseButton.scale(to: frame.size, width: false , multiplier: 0.1)
+        pauseButton.position = CGPoint(x: frame.midX, y: frame.maxY -  (1.4 * pauseButton.size.height))
+        pauseButton.zPosition = GameConstants.ZPositions.hudZ
+        addChild(pauseButton)
+    }
+    
+    func createAndShowPopup(type: Int, title: String) {
+        switch type {
+        case 0:
+            popup = PopupNode(withTitle: title, and: SKTexture(imageNamed: GameConstants.StringConstants.popupSmall), buttonHandlerDelegate: self)
+            popup!.add(buttons: [0,3,2])
+        default:
+            popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: "Level_0-1", texture: SKTexture(imageNamed: GameConstants.StringConstants.popupLarge), score: coins, coins: superCoins, animated: true)
+            popup!.add(buttons: [2,0])
+        }
+        popup!.position = CGPoint(x: frame.midX, y: frame.midY)
+        popup!.zPosition = GameConstants.ZPositions.hudZ
+        popup!.scale(to: frame.size, width: true , multiplier: 0.8)
+        addChild(popup!)
     }
     
     
@@ -321,6 +351,30 @@ extension GameScene: SKPhysicsContactDelegate{
         switch contactMask{
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.groundCategory:
             player.airborne = true
+        default:
+            break
+        }
+    }
+}
+
+extension GameScene: PopupButtonHandlerDelegate {
+    func popupButtonHandler(index: Int) {
+        switch index {
+        case 0:
+            //Menu
+            break
+        case 1:
+            //Play
+            break
+        case 2:
+            //Retry
+            break
+        case 3:
+            //Cancel
+            popup!.run(SKAction.fadeOut(withDuration: 0.2)) {
+                self.popup!.removeFromParent()
+                self.gameState = .ongoing
+            }
         default:
             break
         }

@@ -22,11 +22,11 @@ class GameHUD: SKSpriteNode, HUDDelegate {
         coinLabel.text = "0"
         coinLabel.fontSize = 120.0
         coinLabel.scale(to: frame.size, width: false , multiplier: 0.6)
-        coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width * 1, y: frame.midY - 7)
+        coinLabel.position = CGPoint(x: frame.maxX - coinLabel.frame.size.width * 1.3, y: frame.midY - 16)
         coinLabel.zPosition = GameConstants.ZPositions.hudZ
         addChild(coinLabel)
         
-        superCoinCounter.position = CGPoint(x: frame.minX + superCoinCounter.frame.size.width / 2, y: frame.midY - 7)
+        superCoinCounter.position = CGPoint(x: frame.minX + superCoinCounter.frame.size.width / 2, y: frame.midY - 4.5)
         superCoinCounter.zPosition = GameConstants.ZPositions.hudZ
         addChild(superCoinCounter)
         
@@ -34,8 +34,8 @@ class GameHUD: SKSpriteNode, HUDDelegate {
             let emptySlot = SKSpriteNode(imageNamed: GameConstants.StringConstants.superCoinImageName)
             emptySlot.name = String(i)
             emptySlot.alpha = 0.5
-            emptySlot.scale(to: superCoinCounter.size, width: true, multiplier: 0.33)
-            emptySlot.position = CGPoint(x: -superCoinCounter.size.width / 2 + emptySlot.size.width / 2 +  CGFloat(i) * superCoinCounter.size.width / 2 + superCoinCounter.size.width * 0.05, y: superCoinCounter.frame.midY)
+            emptySlot.scale(to: superCoinCounter.size, width: true, multiplier: 0.3)
+            emptySlot.position = CGPoint(x: -superCoinCounter.size.width / 2 + emptySlot.size.width / 2 +  CGFloat(i) * superCoinCounter.size.width / 2 + superCoinCounter.size.width * 0.05, y: superCoinCounter.frame.midY - 4.5)
             emptySlot.zPosition = GameConstants.ZPositions.hudZ
             superCoinCounter.addChild(emptySlot)
         }

@@ -8,7 +8,5 @@
 import Foundation
 
 protocol PopupButtonHandlerDelegate{
-    func popupButtonHandler(index: Int){
-        
-    }
+    func popupButtonHandler(index: Int)
 }
