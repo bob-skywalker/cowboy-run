@@ -367,6 +367,8 @@ extension GameScene: SKPhysicsContactDelegate{
         default:
             break
         }
+        
+        
     }
     
     func didEnd(_ contact: SKPhysicsContact) {

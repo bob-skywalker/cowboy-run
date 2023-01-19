@@ -17,6 +17,8 @@
 		5C5BD7F02978A04D0037CCBA /* PopupButtonHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7EF2978A04D0037CCBA /* PopupButtonHandlerDelegate.swift */; };
 		5C5BD7F22978A0B30037CCBA /* SpriteKitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7F12978A0B30037CCBA /* SpriteKitButton.swift */; };
 		5C5BD7F42978AD340037CCBA /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7F32978AD340037CCBA /* ScoreManager.swift */; };
+		5C5BD7F62978FF130037CCBA /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BD7F52978FF130037CCBA /* MenuScene.swift */; };
+		5C5BD7F8297903630037CCBA /* PEPSI_pl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C5BD7F7297903630037CCBA /* PEPSI_pl.ttf */; };
 		5C8772E129720CCD008E6F2C /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E029720CCD008E6F2C /* Layer.swift */; };
 		5C8772E32974B898008E6F2C /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E22974B898008E6F2C /* RepeatingLayer.swift */; };
 		5C8772E52974BCF8008E6F2C /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8772E42974BCF8008E6F2C /* GameConstants.swift */; };
@@ -41,7 +43,6 @@
 		5CFC88AE2977839D00791959 /* up-down-rotate.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC88AD2977839D00791959 /* up-down-rotate.sks */; };
 		5CFC88B1297789E800791959 /* HUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC88B0297789E800791959 /* HUDDelegate.swift */; };
 		5CFC88B329778A3700791959 /* GameHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC88B229778A3700791959 /* GameHUD.swift */; };
-		5CFC88B729778B4400791959 /* PEPSI_pl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC88B629778B3300791959 /* PEPSI_pl.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		5C5BD7EF2978A04D0037CCBA /* PopupButtonHandlerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupButtonHandlerDelegate.swift; sourceTree = "<group>"; };
 		5C5BD7F12978A0B30037CCBA /* SpriteKitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitButton.swift; sourceTree = "<group>"; };
 		5C5BD7F32978AD340037CCBA /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		5C5BD7F52978FF130037CCBA /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		5C5BD7F7297903630037CCBA /* PEPSI_pl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PEPSI_pl.ttf; sourceTree = "<group>"; };
 		5C8772E029720CCD008E6F2C /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		5C8772E22974B898008E6F2C /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
 		5C8772E42974BCF8008E6F2C /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
@@ -100,7 +103,6 @@
 		5CFC88AD2977839D00791959 /* up-down-rotate.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "up-down-rotate.sks"; sourceTree = "<group>"; };
 		5CFC88B0297789E800791959 /* HUDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDelegate.swift; sourceTree = "<group>"; };
 		5CFC88B229778A3700791959 /* GameHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
-		5CFC88B629778B3300791959 /* PEPSI_pl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PEPSI_pl.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				5CBCF6F8296FE8470061104A /* GameScene.swift */,
+				5C5BD7F52978FF130037CCBA /* MenuScene.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -312,7 +315,7 @@
 		5CFC88B529778A7A00791959 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5CFC88B629778B3300791959 /* PEPSI_pl.ttf */,
+				5C5BD7F7297903630037CCBA /* PEPSI_pl.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -421,7 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CFC88B729778B4400791959 /* PEPSI_pl.ttf in Resources */,
+				5C5BD7F8297903630037CCBA /* PEPSI_pl.ttf in Resources */,
 				5CBCF6FE296FE8470061104A /* Main.storyboard in Resources */,
 				5CFC88AE2977839D00791959 /* up-down-rotate.sks in Resources */,
 				5CBCF72C2970EE3D0061104A /* Level_0-1.sks in Resources */,
@@ -469,6 +472,7 @@
 				5C8772E82974C161008E6F2C /* Player.swift in Sources */,
 				5C5BD7EC29789FFF0037CCBA /* ScorePopupNode.swift in Sources */,
 				5C8772E52974BCF8008E6F2C /* GameConstants.swift in Sources */,
+				5C5BD7F62978FF130037CCBA /* MenuScene.swift in Sources */,
 				5C5BD7DD2977467F0037CCBA /* ParticleHelper.swift in Sources */,
 				5CAC6FA12975DF5500A116A0 /* AnimationHelper.swift in Sources */,
 				5CBCF6F3296FE8470061104A /* AppDelegate.swift in Sources */,

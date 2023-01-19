@@ -75,7 +75,7 @@ class ScorePopupNode: PopupNode {
         
         let coin = SKSpriteNode(imageNamed: GameConstants.StringConstants.superCoinImageName)
         coin.scale(to: size, width: false, multiplier: 0.15)
-        coin.position = CGPoint(x: -coin.size.width / 1.5 , y: frame.maxY - size.height * 0.75)
+        coin.position = CGPoint(x: -coin.size.width , y: frame.maxY - size.height * 0.75)
         coin.zPosition = GameConstants.ZPositions.hudZ
         addChild(coin)
         
