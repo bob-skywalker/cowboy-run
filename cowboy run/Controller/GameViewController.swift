@@ -31,6 +31,7 @@ class GameViewController: UIViewController {
         let url = URL(fileURLWithPath: path!)
         backgroundMusicPlayer = try! AVAudioPlayer(contentsOf: url)
         backgroundMusicPlayer.numberOfLoops = -1
+        backgroundMusicPlayer.volume = 0.73
         backgroundMusicPlayer.play()
     }
     
@@ -80,9 +81,9 @@ extension GameViewController: SceneManagerDelegate {
             
             
             view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
-            view.showsPhysics = true
+//            view.showsFPS = true
+//            view.showsNodeCount = true
+//            view.showsPhysics = true
         }
     }
     

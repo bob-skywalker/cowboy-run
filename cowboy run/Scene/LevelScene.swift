@@ -71,7 +71,7 @@ class LevelScene: SKScene {
                 levelLabel.fontSize = 200.0
                 levelLabel.verticalAlignmentMode = .center
                 levelLabel.text = "\(level)"
-                if !UserDefaults.standard.bool(forKey: "Level_\(world)-\(level)") && level != 1 {
+                if !UserDefaults.standard.bool(forKey: "Level_\(world)-\(level)_Unlocked") && level != 1 { 
                     levelBox.isUserInteractionEnabled = false
                     levelBox.alpha = 0.75
                     

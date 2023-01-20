@@ -58,6 +58,8 @@ class GameScene: SKScene {
     
     var popup: PopupNode?
     
+    let soundPlayer = SoundPlayer()
+    
     var hudDelegate: HUDDelegate?
     var sceneManagerDelegate: SceneManagerDelegate?
     
@@ -216,8 +218,10 @@ class GameScene: SKScene {
     func handleCollectibles(sprite: SKSpriteNode){
         switch sprite.name! {
         case GameConstants.StringConstants.coinName, _ where GameConstants.StringConstants.superCoinName.contains(sprite.name!):
+            run(soundPlayer.coinSound)
             collectCoin(sprite: sprite)
         case GameConstants.StringConstants.powerUpName:
+            run(soundPlayer.powerupSound)
             player.activatePowerup(active: true)
         default:
             break
@@ -288,6 +292,7 @@ class GameScene: SKScene {
     
     
     func die(reason: Int){
+        run(soundPlayer.gameoverSound)
         gameState = .finished
         player.turnGravity(on: false)
         
@@ -312,6 +317,7 @@ class GameScene: SKScene {
     }
     
     func finishGame(){
+        run(soundPlayer.completedSound)
         if player.position.y > frame.size.height * 0.7 {
             coins += 10
         }
@@ -333,8 +339,10 @@ class GameScene: SKScene {
         ScoreManager.compare(scores: [scores], in: "Level_0-1")
         createAndShowPopup(type: 1, title: GameConstants.StringConstants.completedKey)
         
+        
+        //need to implement more levels 
 //        if level < 9 {
-//            let nextLevelKey = "Level_\(world)-\(level+1)"
+//            let nextLevelKey = "Level_\(world)-\(level+1)_Unlocked"
 //            UserDefaults.standard.set(true, forKey: nextLevelKey)
 //            UserDefaults.standard.synchronize()
 //        }
