@@ -7,14 +7,49 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
+import AVFoundation
+
+var backgroundMusicPlayer: AVAudioPlayer!
+
+var avPlayer: AVPlayer!
+var avPlayerLayer: AVPlayerLayer!
+var paused: Bool = false
+
+
 
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presentMenuScene()
+        startBackgroundMusic()
+        playVideoBackground()
     }
+    
+    func startBackgroundMusic(){
+        let path = Bundle.main.path(forResource: "background", ofType: "wav")
+        let url = URL(fileURLWithPath: path!)
+        backgroundMusicPlayer = try! AVAudioPlayer(contentsOf: url)
+        backgroundMusicPlayer.numberOfLoops = -1
+        backgroundMusicPlayer.play()
+    }
+    
+    
+    func playVideoBackground(){
+        guard let path = Bundle.main.path(forResource: "MenuBackground", ofType: "mp4") else {
+            return
+        }
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        
+        player.play()
+    }
+    
+
+    
+    
 }
 
 extension GameViewController: SceneManagerDelegate {
