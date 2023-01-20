@@ -224,6 +224,10 @@ class GameScene: SKScene {
         case GameConstants.StringConstants.powerUpName:
             run(soundPlayer.powerupSound)
             player.activatePowerup(active: true)
+            worldLayer.layerVelocity = CGPoint(x: -400.0, y: 0.0)
+            run(SKAction.wait(forDuration: 5.0)) {
+                self.worldLayer.layerVelocity = CGPoint(x: -200.0, y: 0.0)
+            }
         default:
             break
         }
