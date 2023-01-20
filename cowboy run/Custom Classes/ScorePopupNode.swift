@@ -8,29 +8,59 @@
 import SpriteKit
 
 class ScorePopupNode: PopupNode {
+    
+    
     var level: String
     var score: [String:Int]
     var scoreLabel: SKLabelNode!
     
-    init(buttonHandlerDelegate: PopupButtonHandlerDelegate, title: String, level: String, texture: SKTexture, score: Int, coins: Int, animated: Bool) {
-        self.level = level
-        self.score = ScoreManager.getCurrentScore(for: level)
-        
-        super.init(withTitle: title, and: texture, buttonHandlerDelegate: buttonHandlerDelegate)
-        
-        addScoreLabel()
-        addStars()
-        addCoins(count: coins)
-        
-        if animated{
-            animateResult(with: CGFloat(score), and: 100.0)
+    init(buttonHandlerDelegate: PopupButtonHandlerDelegate, title: String, level: String, texture: SKTexture, score: Int, coins: Int, animated: Bool, reason: String) {
+        if reason == "result" {
+            self.level = level
+            self.score = ScoreManager.getCurrentScore(for: level)
+            
+            super.init(withTitle: title, and: texture, buttonHandlerDelegate: buttonHandlerDelegate)
+            
+            addScoreLabel()
+            addStars()
+            addCoins(count: coins)
+            
+            if animated{
+                animateResult(with: CGFloat(score), and: 100.0)
+            } else {
+                scoreLabel.text = "\(score)"
+                for i in 0..<self.score[GameConstants.StringConstants.scoreStarsKey]! {
+                    self[GameConstants.StringConstants.starFull + "_\(i)"].first!.alpha = 1.0
+                }
+            }
         } else {
-            scoreLabel.text = "\(score)"
-            for i in 0..<self.score[GameConstants.StringConstants.scoreStarsKey]! {
-                self[GameConstants.StringConstants.starFull + "_\(i)"].first!.alpha = 1.0 
+            self.level = level
+            self.score = ScoreManager.getCurrentScore(for: level)
+            
+            super.init(withTitle: title, and: texture, buttonHandlerDelegate: buttonHandlerDelegate)
+            
+            addScoreLabel()
+            
+            if animated{
+                scoreLabel.fontName = "SFPro-Black"
+                scoreLabel.fontColor = UIColor.gray
+                scoreLabel.fontSize = 100
+                scoreLabel.numberOfLines = 2
+                scoreLabel.preferredMaxLayoutWidth = 1300
+                scoreLabel.text = "Double Tap to Jump Higher Tap the screen to Start"
+            } else {
+                scoreLabel.fontName = "SFPro-Black"
+                scoreLabel.fontColor = UIColor.gray
+                scoreLabel.fontSize = 100
+                scoreLabel.numberOfLines = 2
+                scoreLabel.preferredMaxLayoutWidth = 1300
+                scoreLabel.text = "Double Tap to Jump Higher Tap the screen to Start"
+                }
             }
         }
-        
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func addScoreLabel(){
@@ -115,10 +145,6 @@ class ScorePopupNode: PopupNode {
         star.run(SKAction.group([fadeIn, scaleUp, scaleBack]))
         
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+        
     
 }

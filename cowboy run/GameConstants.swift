@@ -67,6 +67,7 @@ struct GameConstants{
         static let pausedKey = "Paused"
         static let completedKey = "Completed"
         static let failedKey = "Failed"
+        static let hintKey = "Hint"
         
         static let bannerName = "Banner"
         static let popupLarge = "PopupLarge"

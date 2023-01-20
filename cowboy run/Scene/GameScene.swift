@@ -133,6 +133,7 @@ class GameScene: SKScene {
             levelNode.isPaused = false
             worldLayer.addChild(mapNode)
             loadTileMap()
+            createAndShowPopup(type: 3, title: GameConstants.StringConstants.hintKey)
         }
     }
     
@@ -280,10 +281,14 @@ class GameScene: SKScene {
         case 0:
             popup = PopupNode(withTitle: title, and: SKTexture(imageNamed: GameConstants.StringConstants.popupSmall), buttonHandlerDelegate: self)
             popup!.add(buttons: [0,3,2])
-        default:
-            popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: levelKey, texture: SKTexture(imageNamed: GameConstants.StringConstants.popupLarge), score: coins, coins: superCoins, animated: true)
+        case 1:
+            popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: levelKey, texture: SKTexture(imageNamed: GameConstants.StringConstants.popupLarge), score: coins, coins: superCoins, animated: true, reason: "result")
             popup!.add(buttons: [2,1,0])
+        default:
+            popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: levelKey, texture: SKTexture(imageNamed: GameConstants.StringConstants.popupSmall), score: 0, coins: 0, animated: true, reason: "hint")
+            popup!.add(buttons: [0,3])
         }
+        
         popup!.position = CGPoint(x: frame.midX, y: frame.midY)
         popup!.zPosition = GameConstants.ZPositions.hudZ
         popup!.scale(to: frame.size, width: true , multiplier: 0.8)
@@ -351,10 +356,12 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch gameState {
+        
         case .ready:
             gameState = .ongoing
         case .ongoing:
             touch = true
+            popup?.removeFromParent()
             if !player.airborne{
                 jump()
             } else if !brake{
