@@ -361,7 +361,7 @@ class GameScene: SKScene {
         
         
 
-        if level < 3 {
+        if level < 4 {
             let nextLevelKey = "Level_\(world)-\(level+1)_Unlocked"
             UserDefaults.standard.set(true, forKey: nextLevelKey)
             UserDefaults.standard.synchronize()
