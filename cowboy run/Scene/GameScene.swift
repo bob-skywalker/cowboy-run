@@ -30,6 +30,7 @@ class GameScene: SKScene {
             case .ongoing:
                 player.state = .running
                 pauseEnemies(bool: false)
+                rotateEnemies()
             case .paused:
                 player.state = .idle
                 pauseEnemies(bool: true)
@@ -211,8 +212,18 @@ class GameScene: SKScene {
     }
     
     func pauseEnemies(bool: Bool){
+        
         for enemy in tileMap[GameConstants.StringConstants.enemyName]{
             enemy.isPaused = bool
+        }
+    }
+    
+    func rotateEnemies(){
+        run(SKAction.wait(forDuration: 3)) {
+            for enemy in self.tileMap[GameConstants.StringConstants.enemyName]{
+                enemy.xScale *= -1
+            }
+            self.rotateEnemies()
         }
     }
     
