@@ -349,12 +349,12 @@ class GameScene: SKScene {
         createAndShowPopup(type: 1, title: GameConstants.StringConstants.completedKey)
         
         
-        //need to implement more levels 
-//        if level < 9 {
-//            let nextLevelKey = "Level_\(world)-\(level+1)_Unlocked"
-//            UserDefaults.standard.set(true, forKey: nextLevelKey)
-//            UserDefaults.standard.synchronize()
-//        }
+
+        if level < 3 {
+            let nextLevelKey = "Level_\(world)-\(level+1)_Unlocked"
+            UserDefaults.standard.set(true, forKey: nextLevelKey)
+            UserDefaults.standard.synchronize()
+        }
     }
     
     

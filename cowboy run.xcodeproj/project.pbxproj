@@ -39,6 +39,10 @@
 		5CAC6FA12975DF5500A116A0 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC6FA02975DF5500A116A0 /* AnimationHelper.swift */; };
 		5CB5A2CA297A3774009F29D8 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5A2C9297A3774009F29D8 /* SoundPlayer.swift */; };
 		5CB5A2CC297A38F7009F29D8 /* powerup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5CB5A2CB297A38F7009F29D8 /* powerup.wav */; };
+		5CB5A2CE297B73C9009F29D8 /* Level_0-2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CB5A2CD297B73C9009F29D8 /* Level_0-2.sks */; };
+		5CB5A2D0297B73DC009F29D8 /* Level_1-2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CB5A2CF297B73DC009F29D8 /* Level_1-2.sks */; };
+		5CB5A2D2297B73E5009F29D8 /* Level_0-3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CB5A2D1297B73E5009F29D8 /* Level_0-3.sks */; };
+		5CB5A2D4297B73F1009F29D8 /* Level_1-3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5CB5A2D3297B73F1009F29D8 /* Level_1-3.sks */; };
 		5CBCF6F3296FE8470061104A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF6F2296FE8470061104A /* AppDelegate.swift */; };
 		5CBCF6F9296FE8470061104A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF6F8296FE8470061104A /* GameScene.swift */; };
 		5CBCF6FB296FE8470061104A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCF6FA296FE8470061104A /* GameViewController.swift */; };
@@ -106,6 +110,10 @@
 		5CAC6FA02975DF5500A116A0 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		5CB5A2C9297A3774009F29D8 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		5CB5A2CB297A38F7009F29D8 /* powerup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = powerup.wav; sourceTree = "<group>"; };
+		5CB5A2CD297B73C9009F29D8 /* Level_0-2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_0-2.sks"; sourceTree = "<group>"; };
+		5CB5A2CF297B73DC009F29D8 /* Level_1-2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_1-2.sks"; sourceTree = "<group>"; };
+		5CB5A2D1297B73E5009F29D8 /* Level_0-3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_0-3.sks"; sourceTree = "<group>"; };
+		5CB5A2D3297B73F1009F29D8 /* Level_1-3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_1-3.sks"; sourceTree = "<group>"; };
 		5CBCF6EF296FE8470061104A /* cowboy run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cowboy run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBCF6F2296FE8470061104A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CBCF6F8296FE8470061104A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -313,7 +321,11 @@
 			isa = PBXGroup;
 			children = (
 				5CBCF72B2970EE3D0061104A /* Level_0-1.sks */,
+				5CB5A2CD297B73C9009F29D8 /* Level_0-2.sks */,
+				5CB5A2D1297B73E5009F29D8 /* Level_0-3.sks */,
 				5C5B1C272979F597008059A0 /* Level_1-1.sks */,
+				5CB5A2CF297B73DC009F29D8 /* Level_1-2.sks */,
+				5CB5A2D3297B73F1009F29D8 /* Level_1-3.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -468,6 +480,7 @@
 				5C5BD7F8297903630037CCBA /* PEPSI_pl.ttf in Resources */,
 				5C5B1C282979F597008059A0 /* Level_1-1.sks in Resources */,
 				5C5B1C3C297A07DD008059A0 /* background.wav in Resources */,
+				5CB5A2D2297B73E5009F29D8 /* Level_0-3.sks in Resources */,
 				5C5B1C262979E725008059A0 /* PowerupEmitter.sks in Resources */,
 				5CBCF6FE296FE8470061104A /* Main.storyboard in Resources */,
 				5CFC88AE2977839D00791959 /* up-down-rotate.sks in Resources */,
@@ -475,11 +488,14 @@
 				5CBCF72C2970EE3D0061104A /* Level_0-1.sks in Resources */,
 				5C5B1C31297A03A4008059A0 /* completed.wav in Resources */,
 				5CBCF72F2970EEFA0061104A /* TileSets.sks in Resources */,
+				5CB5A2CE297B73C9009F29D8 /* Level_0-2.sks in Resources */,
 				5CBCF700296FE8490061104A /* Assets.xcassets in Resources */,
 				5CB5A2CC297A38F7009F29D8 /* powerup.wav in Resources */,
 				5CA186752977807600C4B3FA /* MyActions.sks in Resources */,
+				5CB5A2D0297B73DC009F29D8 /* Level_1-2.sks in Resources */,
 				5C5BD7E82977515C0037CCBA /* BrakeMagicEmitter.sks in Resources */,
 				5C5B1C2E297A039E008059A0 /* button.wav in Resources */,
+				5CB5A2D4297B73F1009F29D8 /* Level_1-3.sks in Resources */,
 				5C5BD7E2297748670037CCBA /* Assets.xcassets in Resources */,
 				5C5B1C2F297A039E008059A0 /* coin.wav in Resources */,
 				5CBCF703296FE8490061104A /* LaunchScreen.storyboard in Resources */,
