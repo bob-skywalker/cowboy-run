@@ -298,7 +298,7 @@ class GameScene: SKScene {
             popup!.add(buttons: [0,3,2])
         case 1:
             popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: levelKey, texture: SKTexture(imageNamed: GameConstants.StringConstants.popupLarge), score: coins, coins: superCoins, animated: true, reason: "result")
-            popup!.add(buttons: [2,1,0])
+            popup!.add(buttons: [1,2,0])
         default:
             popup = ScorePopupNode(buttonHandlerDelegate: self, title: title, level: levelKey, texture: SKTexture(imageNamed: GameConstants.StringConstants.popupSmall), score: 0, coins: 0, animated: true, reason: "hint")
             popup!.add(buttons: [0,3])
