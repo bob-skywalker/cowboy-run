@@ -227,9 +227,9 @@
 		5CBCF6E6296FE8470061104A = {
 			isa = PBXGroup;
 			children = (
-				5CBCF6F1296FE8470061104A /* cowboy run */,
-				5CBCF70B296FE8490061104A /* cowboy runTests */,
-				5CBCF715296FE8490061104A /* cowboy runUITests */,
+				5CBCF6F1296FE8470061104A /* mighty ninja run */,
+				5CBCF70B296FE8490061104A /* mighty ninja  runTests */,
+				5CBCF715296FE8490061104A /* mighty ninja  runUITests */,
 				5CBCF6F0296FE8470061104A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CBCF6F1296FE8470061104A /* cowboy run */ = {
+		5CBCF6F1296FE8470061104A /* mighty ninja run */ = {
 			isa = PBXGroup;
 			children = (
 				5CFC88B429778A7200791959 /* Resources */,
@@ -264,24 +264,24 @@
 				5CBCF6F2296FE8470061104A /* AppDelegate.swift */,
 				5C8772E42974BCF8008E6F2C /* GameConstants.swift */,
 			);
-			path = "cowboy run";
+			path = "mighty ninja run";
 			sourceTree = "<group>";
 		};
-		5CBCF70B296FE8490061104A /* cowboy runTests */ = {
+		5CBCF70B296FE8490061104A /* mighty ninja  runTests */ = {
 			isa = PBXGroup;
 			children = (
 				5CBCF70C296FE8490061104A /* cowboy_runTests.swift */,
 			);
-			path = "cowboy runTests";
+			path = "mighty ninja  runTests";
 			sourceTree = "<group>";
 		};
-		5CBCF715296FE8490061104A /* cowboy runUITests */ = {
+		5CBCF715296FE8490061104A /* mighty ninja  runUITests */ = {
 			isa = PBXGroup;
 			children = (
 				5CBCF716296FE8490061104A /* cowboy_runUITests.swift */,
 				5CBCF718296FE8490061104A /* cowboy_runUITestsLaunchTests.swift */,
 			);
-			path = "cowboy runUITests";
+			path = "mighty ninja  runUITests";
 			sourceTree = "<group>";
 		};
 		5CBCF726296FE8CE0061104A /* UI */ = {
@@ -736,6 +736,8 @@
 				DEVELOPMENT_TEAM = 9NHVUWY5RP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cowboy-run-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "mighty ninja run";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -747,7 +749,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bozhong.cowboy-run";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -769,6 +771,8 @@
 				DEVELOPMENT_TEAM = 9NHVUWY5RP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cowboy-run-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "mighty ninja run";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -780,7 +784,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bozhong.cowboy-run";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
