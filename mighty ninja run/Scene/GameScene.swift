@@ -356,7 +356,7 @@ class GameScene: SKScene {
             GameConstants.StringConstants.scoreStarsKey: stars,
             GameConstants.StringConstants.scoreCoinsKey: superCoins
         ]
-        ScoreManager.compare(scores: [scores], in: "Level_0-1")
+        ScoreManager.compare(scores: [scores], in: levelKey)
         createAndShowPopup(type: 1, title: GameConstants.StringConstants.completedKey)
         
         
