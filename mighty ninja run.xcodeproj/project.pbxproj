@@ -117,16 +117,16 @@
 		5CB5A2CB297A38F7009F29D8 /* powerup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = powerup.wav; sourceTree = "<group>"; };
 		5CB5A2CD297B73C9009F29D8 /* Level_0-2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_0-2.sks"; sourceTree = "<group>"; };
 		5CB5A2D1297B73E5009F29D8 /* Level_0-3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_0-3.sks"; sourceTree = "<group>"; };
-		5CBCF6EF296FE8470061104A /* cowboy run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cowboy run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CBCF6EF296FE8470061104A /* mighty ninja run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mighty ninja run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBCF6F2296FE8470061104A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CBCF6F8296FE8470061104A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5CBCF6FA296FE8470061104A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5CBCF6FD296FE8470061104A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CBCF6FF296FE8490061104A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CBCF702296FE8490061104A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5CBCF708296FE8490061104A /* cowboy runTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cowboy runTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CBCF708296FE8490061104A /* mighty ninja runTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mighty ninja runTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBCF70C296FE8490061104A /* cowboy_runTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cowboy_runTests.swift; sourceTree = "<group>"; };
-		5CBCF712296FE8490061104A /* cowboy runUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cowboy runUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CBCF712296FE8490061104A /* mighty ninja runUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mighty ninja runUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBCF716296FE8490061104A /* cowboy_runUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cowboy_runUITests.swift; sourceTree = "<group>"; };
 		5CBCF718296FE8490061104A /* cowboy_runUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cowboy_runUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5CBCF725296FE8720061104A /* cowboy-run-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "cowboy-run-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -237,9 +237,9 @@
 		5CBCF6F0296FE8470061104A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CBCF6EF296FE8470061104A /* cowboy run.app */,
-				5CBCF708296FE8490061104A /* cowboy runTests.xctest */,
-				5CBCF712296FE8490061104A /* cowboy runUITests.xctest */,
+				5CBCF6EF296FE8470061104A /* mighty ninja run.app */,
+				5CBCF708296FE8490061104A /* mighty ninja runTests.xctest */,
+				5CBCF712296FE8490061104A /* mighty ninja runUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -382,9 +382,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5CBCF6EE296FE8470061104A /* cowboy run */ = {
+		5CBCF6EE296FE8470061104A /* mighty ninja run */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CBCF71C296FE8490061104A /* Build configuration list for PBXNativeTarget "cowboy run" */;
+			buildConfigurationList = 5CBCF71C296FE8490061104A /* Build configuration list for PBXNativeTarget "mighty ninja run" */;
 			buildPhases = (
 				5CBCF6EB296FE8470061104A /* Sources */,
 				5CBCF6EC296FE8470061104A /* Frameworks */,
@@ -394,14 +394,14 @@
 			);
 			dependencies = (
 			);
-			name = "cowboy run";
+			name = "mighty ninja run";
 			productName = "cowboy run";
-			productReference = 5CBCF6EF296FE8470061104A /* cowboy run.app */;
+			productReference = 5CBCF6EF296FE8470061104A /* mighty ninja run.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5CBCF707296FE8490061104A /* cowboy runTests */ = {
+		5CBCF707296FE8490061104A /* mighty ninja runTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CBCF71F296FE8490061104A /* Build configuration list for PBXNativeTarget "cowboy runTests" */;
+			buildConfigurationList = 5CBCF71F296FE8490061104A /* Build configuration list for PBXNativeTarget "mighty ninja runTests" */;
 			buildPhases = (
 				5CBCF704296FE8490061104A /* Sources */,
 				5CBCF705296FE8490061104A /* Frameworks */,
@@ -412,14 +412,14 @@
 			dependencies = (
 				5CBCF70A296FE8490061104A /* PBXTargetDependency */,
 			);
-			name = "cowboy runTests";
+			name = "mighty ninja runTests";
 			productName = "cowboy runTests";
-			productReference = 5CBCF708296FE8490061104A /* cowboy runTests.xctest */;
+			productReference = 5CBCF708296FE8490061104A /* mighty ninja runTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5CBCF711296FE8490061104A /* cowboy runUITests */ = {
+		5CBCF711296FE8490061104A /* mighty ninja runUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CBCF722296FE8490061104A /* Build configuration list for PBXNativeTarget "cowboy runUITests" */;
+			buildConfigurationList = 5CBCF722296FE8490061104A /* Build configuration list for PBXNativeTarget "mighty ninja runUITests" */;
 			buildPhases = (
 				5CBCF70E296FE8490061104A /* Sources */,
 				5CBCF70F296FE8490061104A /* Frameworks */,
@@ -430,9 +430,9 @@
 			dependencies = (
 				5CBCF714296FE8490061104A /* PBXTargetDependency */,
 			);
-			name = "cowboy runUITests";
+			name = "mighty ninja runUITests";
 			productName = "cowboy runUITests";
-			productReference = 5CBCF712296FE8490061104A /* cowboy runUITests.xctest */;
+			productReference = 5CBCF712296FE8490061104A /* mighty ninja runUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -458,7 +458,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5CBCF6EA296FE8470061104A /* Build configuration list for PBXProject "cowboy run" */;
+			buildConfigurationList = 5CBCF6EA296FE8470061104A /* Build configuration list for PBXProject "mighty ninja run" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -471,9 +471,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5CBCF6EE296FE8470061104A /* cowboy run */,
-				5CBCF707296FE8490061104A /* cowboy runTests */,
-				5CBCF711296FE8490061104A /* cowboy runUITests */,
+				5CBCF6EE296FE8470061104A /* mighty ninja run */,
+				5CBCF707296FE8490061104A /* mighty ninja runTests */,
+				5CBCF711296FE8490061104A /* mighty ninja runUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -582,12 +582,12 @@
 /* Begin PBXTargetDependency section */
 		5CBCF70A296FE8490061104A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CBCF6EE296FE8470061104A /* cowboy run */;
+			target = 5CBCF6EE296FE8470061104A /* mighty ninja run */;
 			targetProxy = 5CBCF709296FE8490061104A /* PBXContainerItemProxy */;
 		};
 		5CBCF714296FE8490061104A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CBCF6EE296FE8470061104A /* cowboy run */;
+			target = 5CBCF6EE296FE8470061104A /* mighty ninja run */;
 			targetProxy = 5CBCF713296FE8490061104A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -662,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -716,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -808,7 +808,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cowboy run.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cowboy run";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mighty ninja run.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mighty ninja run";
 			};
 			name = Debug;
 		};
@@ -828,7 +828,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cowboy run.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cowboy run";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mighty ninja run.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mighty ninja run";
 			};
 			name = Release;
 		};
@@ -871,7 +871,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5CBCF6EA296FE8470061104A /* Build configuration list for PBXProject "cowboy run" */ = {
+		5CBCF6EA296FE8470061104A /* Build configuration list for PBXProject "mighty ninja run" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CBCF71A296FE8490061104A /* Debug */,
@@ -880,7 +880,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CBCF71C296FE8490061104A /* Build configuration list for PBXNativeTarget "cowboy run" */ = {
+		5CBCF71C296FE8490061104A /* Build configuration list for PBXNativeTarget "mighty ninja run" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CBCF71D296FE8490061104A /* Debug */,
@@ -889,7 +889,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CBCF71F296FE8490061104A /* Build configuration list for PBXNativeTarget "cowboy runTests" */ = {
+		5CBCF71F296FE8490061104A /* Build configuration list for PBXNativeTarget "mighty ninja runTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CBCF720296FE8490061104A /* Debug */,
@@ -898,7 +898,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CBCF722296FE8490061104A /* Build configuration list for PBXNativeTarget "cowboy runUITests" */ = {
+		5CBCF722296FE8490061104A /* Build configuration list for PBXNativeTarget "mighty ninja runUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CBCF723296FE8490061104A /* Debug */,
