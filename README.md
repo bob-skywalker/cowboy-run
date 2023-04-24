@@ -53,56 +53,47 @@ The player's end goal is to steer our mighty ninja safely across the level and r
 
 ## Code Snippet
 
-**Swift Async fetch from Unsplash API server** 
+**Swift Dynamic rendering of game background layer** 
 ```swift
   
-struct PhotoManager{
-    var delegate: PhotoManagerDelegate?
-    
-    let photoURL =
-    "https://api.unsplash.com/search/photos?client_id=Pa7ds2qwm2k0cqOa4FALgC4fKya3isGxtlx7lB7h0PI"
-    
-    func fetchPhotos(cityName: String){
-        let replaced = cityName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
-        let urlString = "\(photoURL)&query=\(replaced)"
-        performImageRequest(with: urlString)
-    }
-    
-    func performImageRequest(with urlString: String){
-        if let url = URL(string: urlString){
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-                if error != nil{
-                    self.delegate?.didFailWithPhotoError(error: error!)
-                    return
-                }
-                if let safeData = data {
-                    if let photo = self.parsePhotoJSON(safeData){
-                        self.delegate?.didUpdatePhoto(self, photo: photo)
-                    }
-                }
-            }
-            task.resume()
+func createLayers(){
+        worldLayer = Layer()
+        worldLayer.zPosition = GameConstants.ZPositions.worldZ
+        addChild(worldLayer)
+        worldLayer.layerVelocity = CGPoint(x: -200.0, y: 0.0)
+        
+        backgroundLayer = RepeatingLayer()
+        backgroundLayer.zPosition = GameConstants.ZPositions.farBGZ
+        addChild(backgroundLayer)
+        
+        for i in 0...1{
+            let backgroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.worldBackgroundNames[world])
+            backgroundImage.name = String(i)
+            backgroundImage.scale(to: frame.size, width: false, multiplier: 1.0)
+            backgroundImage.anchorPoint = CGPoint.zero
+            backgroundImage.position = CGPoint(x: 0.0 + CGFloat(i) * backgroundImage.size.width, y: 0.0)
+            backgroundLayer.addChild(backgroundImage)
         }
-    }
-    
-    func parsePhotoJSON(_ photoData: Data) -> PhotoModel? {
-        let decoder = JSONDecoder()
-        do {
-            let decodedData = try decoder.decode(PhotoData.self, from: photoData)
-            if decodedData.results.count == 0 {
-                print("no data loaded")
-                return PhotoModel(photoURL: "https://i.postimg.cc/5y5kyB10/CITY-NOT-FOUND-1.png")
-            }
-            let photoURL = decodedData.results[0].urls.regular
-            let photo = PhotoModel(photoURL: photoURL)
-            return photo
+        backgroundLayer.layerVelocity = CGPoint(x: -100.0, y: 0.0)
+        
+        load(level: levelKey)
+        
+        if world == 1 {
             
-
-        } catch {
-            self.delegate?.didFailWithPhotoError(error: error)
-            return nil
+            foregroundLayer = RepeatingLayer()
+            foregroundLayer.zPosition = GameConstants.ZPositions.hudZ
+            addChild(foregroundLayer)
+            
+            for i in 0...1{
+                let foregroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.foregroundLayer)
+                foregroundImage.name = String(i)
+                foregroundImage.scale(to: frame.size, width: false, multiplier: 1 / 15)
+                foregroundImage.anchorPoint = CGPoint.zero
+                foregroundImage.position = CGPoint(x: 0.0 + CGFloat(i) * foregroundImage.size.width, y: -0.6 * foregroundImage.size.height)
+                foregroundLayer.addChild(foregroundImage)
+                
+            }
+            foregroundLayer.layerVelocity = CGPoint(x: -300, y: 0.0)
         }
     }
-}
 ```
